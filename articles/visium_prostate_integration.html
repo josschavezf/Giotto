@@ -435,20 +435,20 @@ The Visium Normal Prostate data to run this tutorial can be found <a href="https
 <span>    show_image <span class="op">=</span> <span class="cn">T</span>, image_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NP-image"</span>, <span class="st">"CP-image"</span><span class="op">)</span>,</span>
 <span>    group_by <span class="op">=</span> <span class="st">'list_ID'</span>, point_alpha <span class="op">=</span> <span class="fl">0.5</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"1a_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-5-1.png"></p>
+<p><img src="images/visium_prostate_integration/1a_plot.png"></p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># this plots one selected image</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>, cell_color <span class="op">=</span> <span class="st">'in_tissue'</span>,</span>
 <span>    show_image <span class="op">=</span> <span class="cn">T</span>, image_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"NP-image"</span><span class="op">)</span>, point_alpha <span class="op">=</span> <span class="fl">0.3</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"1b_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-6-1.png"></p>
+<p><img src="images/visium_prostate_integration/1b_plot.png"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># this plots two selected images</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>, cell_color <span class="op">=</span> <span class="st">'in_tissue'</span>,</span>
 <span>    show_image <span class="op">=</span> <span class="cn">T</span>, image_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span> <span class="st">"NP-image"</span>, <span class="st">"CP-image"</span><span class="op">)</span>,</span>
 <span>    point_alpha <span class="op">=</span> <span class="fl">0.3</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"1c_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-7-1.png"></p>
+<p><img src="images/visium_prostate_integration/1c_plot.png"></p>
 </div>
 <div class="section level2">
 <h2 id="process-giotto-objects">4 Process Giotto Objects<a class="anchor" aria-label="anchor" href="#process-giotto-objects"></a>
@@ -477,14 +477,14 @@ The Visium Normal Prostate data to run this tutorial can be found <a href="https
 <span><span class="va">testfeats</span> <span class="op">=</span> <span class="va">fmeta</span><span class="op">[</span><span class="va">perc_cells</span> <span class="op">&gt;</span> <span class="fl">20</span> <span class="op">&amp;</span> <span class="va">perc_cells</span> <span class="op">&lt;</span> <span class="fl">50</span><span class="op">]</span><span class="op">[</span><span class="fl">100</span><span class="op">:</span><span class="fl">110</span><span class="op">]</span><span class="op">$</span><span class="va">feat_ID</span></span>
 <span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/violinPlot.html">violinPlot</a></span><span class="op">(</span><span class="va">testcombo</span>, feats <span class="op">=</span> <span class="va">testfeats</span>, cluster_column <span class="op">=</span> <span class="st">'list_ID'</span>, save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"2a_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-9-1.png"></p>
+<p><img src="images/visium_prostate_integration/2a_plot.png"></p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotMetaDataHeatmap.html">plotMetaDataHeatmap</a></span><span class="op">(</span><span class="va">testcombo</span>, selected_feats <span class="op">=</span> <span class="va">testfeats</span>, metadata_cols <span class="op">=</span> <span class="st">'list_ID'</span>, save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"2b_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-9-3.png"></p>
+<p><img src="images/visium_prostate_integration/2b_plot.png"></p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## visualize</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>, group_by <span class="op">=</span> <span class="st">'list_ID'</span>, cell_color <span class="op">=</span> <span class="st">'nr_feats'</span>, color_as_factor <span class="op">=</span> <span class="cn">F</span>, point_size <span class="op">=</span> <span class="fl">0.75</span>, save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"2c_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-10-1.png"></p>
+<p><img src="images/visium_prostate_integration/2c_plot.png"></p>
 </div>
 <div class="section level2">
 <h2 id="dimention-reduction">5 Dimention Reduction<a class="anchor" aria-label="anchor" href="#dimention-reduction"></a>
@@ -492,12 +492,12 @@ The Visium Normal Prostate data to run this tutorial can be found <a href="https
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## PCA ##</span></span>
 <span><span class="va">testcombo</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calculateHVF.html">calculateHVF</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-11-1.png"></p>
+<p><img src="images/visium_prostate_integration/0-HVFplot.png"></p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">testcombo</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/runPCA.html">runPCA</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>, center <span class="op">=</span> <span class="cn">TRUE</span>, scale_unit <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">testcombo</span>, ncp <span class="op">=</span> <span class="fl">30</span>, save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"3a_screeplot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-11-2.png"></p>
+<p><img src="images/visium_prostate_integration/3a_screeplot.png"></p>
 </div>
 <div class="section level2">
 <h2 id="clustering">6 Clustering<a class="anchor" aria-label="anchor" href="#clustering"></a>
@@ -524,18 +524,18 @@ integration methods.</p>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/plotUMAP.html">plotUMAP</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>,</span>
 <span>    cell_color <span class="op">=</span> <span class="st">'leiden_clus'</span>, show_NN_network <span class="op">=</span> <span class="cn">T</span>, point_size <span class="op">=</span> <span class="fl">1.5</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4.1a_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-12-1.png"></p>
+<p><img src="images/visium_prostate_integration/4.1a_plot.png"></p>
 <div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>, group_by <span class="op">=</span> <span class="st">'list_ID'</span>,</span>
 <span>    cell_color <span class="op">=</span> <span class="st">'leiden_clus'</span>,</span>
 <span>    point_size <span class="op">=</span> <span class="fl">1.5</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4.1b_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-13-1.png"></p>
+<p><img src="images/visium_prostate_integration/4.1b_plot.png"></p>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html">spatDimPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>,</span>
 <span>    cell_color <span class="op">=</span> <span class="st">'leiden_clus'</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4.1c_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-14-1.png"></p>
+<p><img src="images/visium_prostate_integration/4.1c_plot.png"></p>
 </div>
 <div class="section level3">
 <h3 id="with-harmony-integration">6.2 With Harmony integration<a class="anchor" aria-label="anchor" href="#with-harmony-integration"></a>
@@ -573,7 +573,7 @@ work well on spatial datasets.</p>
 <span>    show_NN_network <span class="op">=</span> <span class="cn">F</span>, </span>
 <span>    point_size <span class="op">=</span> <span class="fl">1.5</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4.2a_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-15-1.png"></p>
+<p><img src="images/visium_prostate_integration/4.2a_plot.png"></p>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># If you want to show NN network information, you will need to specify these arguments in the plotUMAP function</span></span>
 <span><span class="co"># show_NN_network = T, nn_network_to_use = 'sNN' , network_name = 'NN.harmony'</span></span></code></pre></div>
@@ -582,24 +582,24 @@ work well on spatial datasets.</p>
 <span>    cell_color <span class="op">=</span> <span class="st">'leiden_harmony'</span>,</span>
 <span>    point_size <span class="op">=</span> <span class="fl">1.5</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4.2b_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-16-1.png"></p>
+<p><img src="images/visium_prostate_integration/4.2b_plot.png"></p>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatDimPlot.html">spatDimPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>,</span>
 <span>    dim_reduction_to_use <span class="op">=</span> <span class="st">'umap'</span>, dim_reduction_name <span class="op">=</span> <span class="st">'umap_harmony'</span>,</span>
 <span>    cell_color <span class="op">=</span> <span class="st">'leiden_harmony'</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4.2c_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-17-1.png"></p>
+<p><img src="images/visium_prostate_integration/4.2c_plot.png"></p>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># compare to previous results</span></span>
 <span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>,</span>
 <span>    cell_color <span class="op">=</span> <span class="st">'leiden_clus'</span>, </span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4_w_o_integration_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-18-1.png"></p>
+<p><img src="images/visium_prostate_integration/4_w_o_integration_plot.png"></p>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://drieslab.github.io/GiottoVisuals/reference/spatPlot.html">spatPlot2D</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">testcombo</span>,</span>
 <span>    cell_color <span class="op">=</span> <span class="st">'leiden_harmony'</span>,</span>
 <span>    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4_w_integration_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-18-3.png"></p>
+<p><img src="images/visium_prostate_integration/4_w_integration_plot.png"></p>
 </div>
 </div>
 <div class="section level2">
@@ -676,7 +676,7 @@ of this dataset using getSpatialDataset</p>
 <span>             cell_annotation_values <span class="op">=</span> <span class="va">cell_types_subset</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>,</span>
 <span>             cow_n_col <span class="op">=</span> <span class="fl">2</span>,coord_fix_ratio <span class="op">=</span> <span class="cn">NULL</span>, point_size <span class="op">=</span> <span class="fl">1.25</span>,</span>
 <span>             save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"5a_PAGE_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-21-1.png"></p>
+<p><img src="images/visium_prostate_integration/5a_PAGE_plot.png"></p>
 </div>
 <div class="section level3">
 <h3 id="hypergeometric-test">7.2 Hypergeometric test<a class="anchor" aria-label="anchor" href="#hypergeometric-test"></a>
@@ -691,7 +691,7 @@ of this dataset using getSpatialDataset</p>
 <span>             cell_annotation_values <span class="op">=</span> <span class="va">cell_types_subset</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>,</span>
 <span>             cow_n_col <span class="op">=</span> <span class="fl">2</span>,coord_fix_ratio <span class="op">=</span> <span class="cn">NULL</span>, point_size <span class="op">=</span> <span class="fl">1.75</span>,</span>
 <span>             save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"5b_HyperGeometric_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-22-1.png"></p>
+<p><img src="images/visium_prostate_integration/5b_HyperGeometric_plot.png"></p>
 </div>
 <div class="section level3">
 <h3 id="rank-enrichment">7.3 Rank Enrichment<a class="anchor" aria-label="anchor" href="#rank-enrichment"></a>
@@ -716,7 +716,7 @@ of this dataset using getSpatialDataset</p>
 <span>               cell_annotation_values <span class="op">=</span> <span class="va">cell_types_subset</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>,</span>
 <span>               cow_n_col <span class="op">=</span> <span class="fl">2</span>,coord_fix_ratio <span class="op">=</span> <span class="cn">NULL</span>, point_size <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>               save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"5c_Rank_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-23-1.png"></p>
+<p><img src="images/visium_prostate_integration/5c_Rank_plot.png"></p>
 </div>
 <div class="section level3">
 <h3 id="dwls-deconvolution">7.4 DWLS Deconvolution<a class="anchor" aria-label="anchor" href="#dwls-deconvolution"></a>
@@ -736,7 +736,7 @@ of this dataset using getSpatialDataset</p>
 <span>               cell_annotation_values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">prostate_feats</span><span class="op">)</span><span class="op">)</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>,</span>
 <span>               cow_n_col <span class="op">=</span> <span class="fl">2</span>,coord_fix_ratio <span class="op">=</span> <span class="cn">NULL</span>, point_size <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>               save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"5d_DWLS_plot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/visium_prostate_integration/unnamed-chunk-24-1.png"></p>
+<p><img src="images/visium_prostate_integration/5d_DWLS_plot.png"></p>
 </div>
 </div>
 <div class="section level2">
