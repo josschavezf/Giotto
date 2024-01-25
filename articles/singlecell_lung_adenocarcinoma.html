@@ -442,7 +442,7 @@ data.</p>
 <span><span class="fu"><a href="../reference/screePlot.html">screePlot</a></span><span class="op">(</span><span class="va">giotto_SC</span>, </span>
 <span>          ncp <span class="op">=</span> <span class="fl">30</span>, </span>
 <span>          save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'3_scree_plot'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/sc_lung_adenocarcinoma/3_scree_plot.png"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/3_scree_plot.png"></p>
 </div>
 <div class="section level2">
 <h2 id="part-4-cluster">Part 4: Cluster<a class="anchor" aria-label="anchor" href="#part-4-cluster"></a>
@@ -468,7 +468,7 @@ data.</p>
 <span>         show_NN_network <span class="op">=</span> <span class="cn">T</span>, </span>
 <span>         point_size <span class="op">=</span> <span class="fl">1.5</span>,</span>
 <span>         save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"4_Cluster"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/sc_lung_adenocarcinoma/4_Cluster.png"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/4_Cluster.png"></p>
 </div>
 <div class="section level2">
 <h2 id="part-5-differential-expression">Part 5: Differential Expression<a class="anchor" aria-label="anchor" href="#part-5-differential-expression"></a>
@@ -488,7 +488,7 @@ data.</p>
 <span>                    y_text_size <span class="op">=</span> <span class="fl">8</span>, </span>
 <span>                    show_values <span class="op">=</span> <span class="st">'zscores_rescaled'</span>,</span>
 <span>                    save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">'5_metaheatmap'</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/sc_lung_adenocarcinoma/5_metaheatmap.png"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/5_metaheatmap.png"></p>
 </div>
 <div class="section level2">
 <h2 id="part-6-featureplot">Part 6: FeaturePlot<a class="anchor" aria-label="anchor" href="#part-6-featureplot"></a>
@@ -499,7 +499,7 @@ data.</p>
 <span>              feats <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"EPCAM"</span>, <span class="st">"PMEL"</span>, <span class="st">"C1QA"</span>,<span class="st">"COL1A1"</span><span class="op">)</span>, </span>
 <span>              cow_n_col <span class="op">=</span> <span class="fl">2</span>, </span>
 <span>              save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"6_featureplot"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/sc_lung_adenocarcinoma/6_featureplot.png"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/6_featureplot.png"></p>
 </div>
 <div class="section level2">
 <h2 id="part-7-cell-type-annotation">Part 7: Cell type Annotation<a class="anchor" aria-label="anchor" href="#part-7-cell-type-annotation"></a>
@@ -605,7 +605,7 @@ data.</p>
 <span>        <span class="op">)</span> <span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/grDevices/dev.html" class="external-link">dev.off</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/sc_lung_adenocarcinoma/6_heatmap_all_clusters_cell_types.png"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/6_heatmap_all_clusters_cell_types.png"></p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lung_labels</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"carcinoma_cells"</span>,<span class="co">#1</span></span>
 <span>               <span class="st">"epithelial"</span>,<span class="co">#2</span></span>
@@ -652,7 +652,7 @@ data.</p>
 <span>          show_NN_network <span class="op">=</span> <span class="cn">T</span>, </span>
 <span>          point_size <span class="op">=</span> <span class="fl">1.5</span>,</span>
 <span>          save_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>save_name <span class="op">=</span> <span class="st">"7_Annotation"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="images/sc_lung_adenocarcinoma/7_Annotation.png"></p>
+<p><img src="images/singlecell_lung_adenocarcinoma/7_Annotation.png"></p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>R version <span class="dv">4</span>.<span class="fl">3.2</span> (<span class="dv">2023-10-31</span>)</span>
