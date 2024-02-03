@@ -276,6 +276,9 @@
     <li>
       <a href="../articles/interoperability_anndata.html">AnnData</a>
     </li>
+    <li>
+      <a href="../articles/interoperability_spatialexperiment.html">SpatialExperiment</a>
+    </li>
     <li class="divider">
     </li>
 <li class="dropdown-header">Try Giotto in the Cloud</li>
@@ -737,7 +740,7 @@ Subcellular</h1>
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># find interaction changed Features</span></span>
 <span><span class="co"># In this case, features are genes whose expression difference is associated with a neighboring cell type</span></span>
-<span><span class="fu">future</span><span class="fu">::</span><span class="fu">plan</span><span class="op">(</span><span class="st">'multisession'</span>, workers <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="co"># sometimes unstable, restart R session</span></span>
+<span><span class="fu">future</span><span class="fu">::</span><span class="fu"><a href="https://future.futureverse.org/reference/plan.html" class="external-link">plan</a></span><span class="op">(</span><span class="st">'multisession'</span>, workers <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="co"># sometimes unstable, restart R session</span></span>
 <span></span>
 <span><span class="va">test</span> <span class="op">=</span> <span class="fu"><a href="../reference/findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">subc_test</span>,</span>
 <span>                                   cluster_column <span class="op">=</span> <span class="st">'leiden_clus'</span><span class="op">)</span></span>

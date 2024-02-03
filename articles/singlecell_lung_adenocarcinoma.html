@@ -276,6 +276,9 @@
     <li>
       <a href="../articles/interoperability_anndata.html">AnnData</a>
     </li>
+    <li>
+      <a href="../articles/interoperability_spatialexperiment.html">SpatialExperiment</a>
+    </li>
     <li class="divider">
     </li>
 <li class="dropdown-header">Try Giotto in the Cloud</li>
@@ -529,7 +532,7 @@ data.</p>
 <span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">ComplexHeatmap</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jokergoo/ComplexHeatmap" class="external-link">ComplexHeatmap</a></span><span class="op">)</span></span>
 <span><span class="va">heatmap_table</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/calculateMetaTable.html">calculateMetaTable</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">giotto_SC</span>,</span>
 <span>                                    expression_values <span class="op">=</span> <span class="st">'normalized'</span>,</span>
 <span>                                    metadata_cols <span class="op">=</span> <span class="st">'leiden_clus'</span>,</span>
@@ -575,8 +578,8 @@ data.</p>
 <span><span class="va">n_leiden_clusters</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">giotto_SC</span><span class="op">@</span><span class="va">cell_metadata</span><span class="op">$</span><span class="va">cell</span><span class="op">$</span><span class="va">rna</span><span class="op">@</span><span class="va">metaDT</span><span class="op">$</span><span class="va">leiden_clus</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">panel_fun</span> <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">index</span>, <span class="va">nm</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu">grid.rect</span><span class="op">(</span><span class="op">)</span></span>
-<span>  <span class="fu">grid.text</span><span class="op">(</span><span class="va">nm</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">6</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/grid/grid.rect.html" class="external-link">grid.rect</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/grid/grid.text.html" class="external-link">grid.text</a></span><span class="op">(</span><span class="va">nm</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html" class="external-link">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">6</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="co">## heatmap z-score per leiden cluster</span></span>
@@ -584,17 +587,17 @@ data.</p>
 <span>    width <span class="op">=</span> <span class="fl">2000</span>,</span>
 <span>    height <span class="op">=</span> <span class="fl">1500</span>,</span>
 <span>    res <span class="op">=</span> <span class="fl">300</span><span class="op">)</span></span>
-<span><span class="fu">Heatmap</span><span class="op">(</span><span class="va">heatmap_matrix</span>,</span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/Heatmap.html" class="external-link">Heatmap</a></span><span class="op">(</span><span class="va">heatmap_matrix</span>,</span>
 <span>        cluster_rows <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>        cluster_columns <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>        row_order <span class="op">=</span> <span class="va">cell_types_heatmap</span><span class="op">$</span><span class="va">variable</span>,</span>
 <span>        column_order <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="va">n_leiden_clusters</span><span class="op">)</span>,</span>
-<span>        row_names_gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
-<span>        column_names_gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span>,</span>
+<span>        row_names_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html" class="external-link">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>,</span>
+<span>        column_names_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html" class="external-link">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span>,</span>
 <span>        column_names_rot <span class="op">=</span> <span class="fl">45</span>,</span>
 <span>        heatmap_legend_param <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">""</span>, </span>
-<span>                                    labels_gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>        left_annotation <span class="op">=</span> <span class="fu">rowAnnotation</span><span class="op">(</span>cell_types <span class="op">=</span> <span class="fu">anno_block</span><span class="op">(</span>align_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
+<span>                                    labels_gp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grid/gpar.html" class="external-link">gpar</a></span><span class="op">(</span>fontsize <span class="op">=</span> <span class="fl">8</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>        left_annotation <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/rowAnnotation.html" class="external-link">rowAnnotation</a></span><span class="op">(</span>cell_types <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/ComplexHeatmap/man/anno_block.html" class="external-link">anno_block</a></span><span class="op">(</span>align_to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>          B_cell_mem <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"IRF8"</span>, <span class="st">"MS4A1"</span><span class="op">)</span>,</span>
 <span>          B_cells <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"IGLL5"</span>, <span class="st">"MZB1"</span>, <span class="st">"JCHAIN"</span>, <span class="st">"DERL3"</span>, <span class="st">"SDC1"</span>, <span class="st">"MS$A1"</span>, <span class="st">"BANK1"</span>, <span class="st">"PAX5"</span>, <span class="st">"CD79A"</span><span class="op">)</span>,</span>
 <span>          T_cells <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CD2"</span>, <span class="st">"CD3D"</span>, <span class="st">"CD3E"</span>, <span class="st">"CD3G"</span><span class="op">)</span>,</span>

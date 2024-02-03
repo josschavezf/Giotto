@@ -276,6 +276,9 @@
     <li>
       <a href="../articles/interoperability_anndata.html">AnnData</a>
     </li>
+    <li>
+      <a href="../articles/interoperability_spatialexperiment.html">SpatialExperiment</a>
+    </li>
     <li class="divider">
     </li>
 <li class="dropdown-header">Try Giotto in the Cloud</li>
@@ -852,7 +855,7 @@ image:</p>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html" class="external-link">quantile</a></span><span class="op">(</span><span class="va">gene_metadata</span><span class="op">$</span><span class="va">mean_expr_det</span><span class="op">)</span></span>
 <span><span class="va">high_expressed_genes</span> <span class="op">=</span> <span class="va">gene_metadata</span><span class="op">[</span><span class="va">mean_expr_det</span> <span class="op">&gt;</span> <span class="fl">3.5</span><span class="op">]</span><span class="op">$</span><span class="va">feat_ID</span></span>
 <span><span class="co">## identify genes that are associated with proximity to other cell types</span></span>
-<span><span class="fu">plan</span><span class="op">(</span><span class="st">'multisession'</span>, workers <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://future.futureverse.org/reference/plan.html" class="external-link">plan</a></span><span class="op">(</span><span class="st">'multisession'</span>, workers <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span>
 <span><span class="va">ICFsForesHighGenes</span> <span class="op">=</span>  <span class="fu"><a href="../reference/findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">SS_seqfish</span>,</span>
 <span>                              selected_feats <span class="op">=</span> <span class="va">high_expressed_genes</span>,</span>
 <span>                              spatial_network_name <span class="op">=</span> <span class="st">'Delaunay_network'</span>,</span>

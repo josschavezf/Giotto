@@ -276,6 +276,9 @@
     <li>
       <a href="../articles/interoperability_anndata.html">AnnData</a>
     </li>
+    <li>
+      <a href="../articles/interoperability_spatialexperiment.html">SpatialExperiment</a>
+    </li>
     <li class="divider">
     </li>
 <li class="dropdown-header">Try Giotto in the Cloud</li>
@@ -1353,7 +1356,7 @@ expression of cells and their spatial neighbors.</p>
 <h2 id="interaction-changed-genes">14. Interaction Changed Genes<a class="anchor" aria-label="anchor" href="#interaction-changed-genes"></a>
 </h2>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">future</span><span class="fu">::</span><span class="fu">plan</span><span class="op">(</span><span class="st">'multisession'</span>, workers <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="co"># NOTE: Depending on your system this could take time</span></span>
+<code class="sourceCode R"><span><span class="fu">future</span><span class="fu">::</span><span class="fu"><a href="https://future.futureverse.org/reference/plan.html" class="external-link">plan</a></span><span class="op">(</span><span class="st">'multisession'</span>, workers <span class="op">=</span> <span class="fl">4</span><span class="op">)</span> <span class="co"># NOTE: Depending on your system this could take time</span></span>
 <span></span>
 <span><span class="va">icf</span> <span class="op">=</span> <span class="fu"><a href="../reference/findInteractionChangedFeats.html">findInteractionChangedFeats</a></span><span class="op">(</span>gobject <span class="op">=</span> <span class="va">fov_join</span>,</span>
 <span>                                  cluster_column <span class="op">=</span> <span class="st">'cell_types'</span><span class="op">)</span></span>
