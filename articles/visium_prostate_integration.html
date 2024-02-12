@@ -56,13 +56,13 @@
       <a href="../articles/structure.html">Giotto Class Structure</a>
     </li>
     <li>
-      <a href="../articles/errorsfaqsandtips.html">Solutions to Installation Errors</a>
-    </li>
-    <li>
       <a href="../articles/faqs.html">FAQs</a>
     </li>
     <li>
       <a href="../articles/github_issues.html">How to report a bug</a>
+    </li>
+    <li>
+      <a href="../articles/contributing.html">Contributing guide</a>
     </li>
   </ul>
 </li>
@@ -363,29 +363,38 @@
     
     
 <div class="section level2">
-<h2 id="start-giotto">1 Start Giotto<a class="anchor" aria-label="anchor" href="#start-giotto"></a>
+<h2 id="dataset-explanation">1 Dataset explanation<a class="anchor" aria-label="anchor" href="#dataset-explanation"></a>
+</h2>
+<p><a href="https://www.10xgenomics.com/spatial-transcriptomics/" class="external-link">10X
+genomics</a> recently launched a new platform to obtain spatial
+expression data using a Visium Spatial Gene Expression slide.</p>
+<p>The Visium Cancer Prostate data to run this tutorial can be found <a href="https://www.10xgenomics.com/resources/datasets/human-prostate-cancer-adenocarcinoma-with-invasive-carcinoma-ffpe-1-standard-1-3-0" class="external-link">here</a>
+The Visium Normal Prostate data to run this tutorial can be found <a href="https://www.10xgenomics.com/resources/datasets/normal-human-prostate-ffpe-1-standard-1-3-0" class="external-link">here</a></p>
+<p>Visium technology:</p>
+<p><img src="images/general_figs/visium_technology.png" style="width:50.0%"></p>
+<p>High resolution png from original tissue:</p>
+<p><img src="images/general_figs/Visium_FFPE_Human_Normal_Prostate_image.png" style="width:50.0%"></p>
+<p><img src="images/general_figs/Visium_FFPE_Human_Prostate_Cancer_image.png" style="width:50.0%"></p>
+</div>
+<div class="section level2">
+<h2 id="start-giotto">2 Start Giotto<a class="anchor" aria-label="anchor" href="#start-giotto"></a>
 </h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Ensure Giotto Suite is installed</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"Giotto"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"drieslab/Giotto@suite"</span><span class="op">)</span></span>
+<span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"drieslab/Giotto"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/">Giotto</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Ensure Giotto Data is installed</span></span>
-<span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"GiottoData"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"drieslab/GiottoData"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/GiottoData/">GiottoData</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Ensure the Python environment for Giotto has been installed</span></span>
-<span><span class="va">genv_exists</span> <span class="op">=</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/checkGiottoEnvironment.html">checkGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">genv_exists</span> <span class="op">=</span> <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/checkGiottoEnvironment.html">checkGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="va">genv_exists</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="co"># The following command need only be run once to install the Giotto environment</span></span>
-<span>  <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/installGiottoEnvironment.html">installGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="fu">Giotto</span><span class="fu">::</span><span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/installGiottoEnvironment.html">installGiottoEnvironment</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="op">}</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># 1. set working directory</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/">Giotto</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># 1. set working directory</span></span>
 <span><span class="va">results_directory</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># 2. set giotto python path</span></span>
@@ -401,20 +410,6 @@
 <span>                                  save_plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                                  show_plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                                  python_path <span class="op">=</span> <span class="va">python_path</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="dataset-explanation">2 Dataset explanation<a class="anchor" aria-label="anchor" href="#dataset-explanation"></a>
-</h2>
-<p><a href="https://www.10xgenomics.com/spatial-transcriptomics/" class="external-link">10X
-genomics</a> recently launched a new platform to obtain spatial
-expression data using a Visium Spatial Gene Expression slide.</p>
-<p>The Visium Cancer Prostate data to run this tutorial can be found <a href="https://www.10xgenomics.com/resources/datasets/human-prostate-cancer-adenocarcinoma-with-invasive-carcinoma-ffpe-1-standard-1-3-0" class="external-link">here</a>
-The Visium Normal Prostate data to run this tutorial can be found <a href="https://www.10xgenomics.com/resources/datasets/normal-human-prostate-ffpe-1-standard-1-3-0" class="external-link">here</a></p>
-<p>Visium technology:</p>
-<p><img src="images/general_figs/visium_technology.png" style="width:50.0%"></p>
-<p>High resolution png from original tissue:</p>
-<p><img src="images/general_figs/Visium_FFPE_Human_Normal_Prostate_image.png" style="width:50.0%"></p>
-<p><img src="images/general_figs/Visium_FFPE_Human_Prostate_Cancer_image.png" style="width:50.0%"></p>
 </div>
 <div class="section level2">
 <h2 id="create-giotto-objects-and-join">3 Create Giotto objects and join<a class="anchor" aria-label="anchor" href="#create-giotto-objects-and-join"></a>

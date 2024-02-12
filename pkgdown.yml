@@ -5,9 +5,9 @@ articles:
   branches: branches.html
   codex_mouse_spleen: codex_mouse_spleen.html
   configuration: configuration.html
+  contributing: contributing.html
   docker: docker.html
   ecosystem: ecosystem.html
-  errorsfaqsandtips: errorsfaqsandtips.html
   faqs: faqs.html
   github_issues: github_issues.html
   image_alignment: image_alignment.html
@@ -35,6 +35,7 @@ articles:
   spatial_genomics_mouse_kidney: spatial_genomics_mouse_kidney.html
   spatial_transformations: spatial_transformations.html
   structure: structure.html
+  team: team.html
   terra: terra.html
   visium_cytassist_human_glioblastoma: visium_cytassist_human_glioblastoma.html
   visium_cytassist_lungcancer: visium_cytassist_lungcancer.html
@@ -44,7 +45,7 @@ articles:
   visualizations: visualizations.html
   vizgen_mouse_brain: vizgen_mouse_brain.html
   xenium_breast_cancer: xenium_breast_cancer.html
-last_built: 2024-02-09T21:02Z
+last_built: 2024-02-12T19:00Z
 urls:
   reference: https://drieslab.github.io/Giotto/reference
   article: https://drieslab.github.io/Giotto/articles

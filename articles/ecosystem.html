@@ -56,13 +56,13 @@
       <a href="../articles/structure.html">Giotto Class Structure</a>
     </li>
     <li>
-      <a href="../articles/errorsfaqsandtips.html">Solutions to Installation Errors</a>
-    </li>
-    <li>
       <a href="../articles/faqs.html">FAQs</a>
     </li>
     <li>
       <a href="../articles/github_issues.html">How to report a bug</a>
+    </li>
+    <li>
+      <a href="../articles/contributing.html">Contributing guide</a>
     </li>
   </ul>
 </li>
@@ -382,7 +382,7 @@ specific technologies are found in the base Giotto package.</p>
 <p>Find more information <a href="https://drieslab.github.io/GiottoClass/">here</a></p>
 <p>To install GiottoClass run:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'drieslab/GiottoClass'</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">'drieslab/GiottoClass'</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="giottoutils">3. GiottoUtils<a class="anchor" aria-label="anchor" href="#giottoutils"></a>
@@ -394,7 +394,7 @@ need to directly interact with this package.</p>
 <p>Find more information <a href="https://drieslab.github.io/GiottoUtils/">here</a></p>
 <p>To install GiottoUtils run:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'drieslab/GiottoUtils'</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">'drieslab/GiottoUtils'</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="giottovisuals">4. GiottoVisuals<a class="anchor" aria-label="anchor" href="#giottovisuals"></a>
@@ -404,7 +404,7 @@ Suite</p>
 <p>Find more information <a href="https://drieslab.github.io/GiottoVisuals/">here</a></p>
 <p>To install GiottoVisuals run:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'drieslab/GiottoVisuals'</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">'drieslab/GiottoVisuals'</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="giottodata">5. GiottoData<a class="anchor" aria-label="anchor" href="#giottodata"></a>
@@ -425,7 +425,7 @@ to make the Giotto Object structure as transparent as possible.</p>
 <p>Find more information <a href="https://drieslab.github.io/GiottoData/">here</a></p>
 <p>To install GiottoData run:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'drieslab/GiottoData'</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">'drieslab/GiottoData'</span><span class="op">)</span></span></code></pre></div>
 <p>The scripts used to create both the mini giotto objects and mini
 objects are available in the repository so that we may extend and/or
 improve them and that you may utilize them for your own purposes!</p>
@@ -435,14 +435,14 @@ improve them and that you may utilize them for your own purposes!</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Ensure Giotto Suite is installed</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"Giotto"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"drieslab/Giotto"</span><span class="op">)</span></span>
+<span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"drieslab/Giotto"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/Giotto/">Giotto</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Ensure Giotto Data is installed</span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="st">"GiottoData"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"drieslab/GiottoData"</span><span class="op">)</span></span>
+<span>  <span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pkg_install.html" class="external-link">pkg_install</a></span><span class="op">(</span><span class="st">"drieslab/GiottoData"</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://drieslab.github.io/GiottoData/">GiottoData</a></span><span class="op">)</span></span>

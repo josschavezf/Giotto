@@ -25,13 +25,13 @@
     <loc>https://drieslab.github.io/Giotto/articles/configuration.html</loc>
   </url>
   <url>
+    <loc>https://drieslab.github.io/Giotto/articles/contributing.html</loc>
+  </url>
+  <url>
     <loc>https://drieslab.github.io/Giotto/articles/docker.html</loc>
   </url>
   <url>
     <loc>https://drieslab.github.io/Giotto/articles/ecosystem.html</loc>
-  </url>
-  <url>
-    <loc>https://drieslab.github.io/Giotto/articles/errorsfaqsandtips.html</loc>
   </url>
   <url>
     <loc>https://drieslab.github.io/Giotto/articles/faqs.html</loc>
@@ -116,6 +116,9 @@
   </url>
   <url>
     <loc>https://drieslab.github.io/Giotto/articles/structure.html</loc>
+  </url>
+  <url>
+    <loc>https://drieslab.github.io/Giotto/articles/team.html</loc>
   </url>
   <url>
     <loc>https://drieslab.github.io/Giotto/articles/terra.html</loc>
