@@ -421,11 +421,47 @@ method is provided here.</p>
 <code class="sourceCode R"><span><span class="co"># Restart the R session, while maintaining workspace variables.</span></span>
 <span><span class="co"># If using RStudio, the following command will do exactly that:</span></span>
 <span><span class="fu">.rs.restartR</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Creating Giotto Instructions without specifying a Python path will make </span></span>
+<span><span class="co"># reticulate activate the default Giotto environment. </span></span>
+<span><span class="va">default_instrs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://drieslab.github.io/GiottoClass/reference/createGiottoInstructions.html">createGiottoInstructions</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Extract python path information</span></span>
+<span><span class="va">default_python_path</span> <span class="op">&lt;-</span> <span class="va">default_instrs</span><span class="op">$</span><span class="va">python_path</span></span>
+<span></span>
 <span><span class="co"># Direct reticulate to use Python within the Giotto Environment</span></span>
 <span><span class="fu">reticulate</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/use_python.html" class="external-link">use_python</a></span><span class="op">(</span><span class="va">default_python_path</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Make reticulate iteratively check for the packages</span></span>
+<span><span class="va">pkg_check</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span><span class="op">{</span></span>
+<span>  <span class="va">py_pkgs</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'pandas'</span>,<span class="st">'networkx'</span>, <span class="st">'igraph'</span>, <span class="st">'leidenalg'</span>,<span class="st">'community'</span>,<span class="st">'sklearn'</span>,<span class="st">'python.app'</span><span class="op">)</span></span>
+<span>  <span class="va">py_pkg_error</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="va">test_availability</span> <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  </span>
+<span>  <span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="va">py_pkgs</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="va">i</span> <span class="op">==</span> <span class="st">'python.app'</span> <span class="op">&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.info.html" class="external-link">Sys.info</a></span><span class="op">(</span><span class="op">)</span><span class="op">[[</span><span class="st">'sysname'</span><span class="op">]</span><span class="op">]</span> <span class="op">!=</span> <span class="st">"Darwin"</span><span class="op">)</span><span class="op">{</span></span>
+<span>      <span class="co"># If the machine OS is not OSX (Mac), break out of the loop</span></span>
+<span>      <span class="co"># Otherwise, also check for python.app</span></span>
+<span>      <span class="kw">break</span></span>
+<span>    <span class="op">}</span></span>
+<span>    <span class="va">test_availability</span> <span class="op">&lt;-</span> <span class="fu">reticulate</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_module_available.html" class="external-link">py_module_available</a></span><span class="op">(</span><span class="va">i</span><span class="op">)</span></span>
+<span>    <span class="kw">if</span><span class="op">(</span><span class="op">!</span><span class="va">test_availability</span><span class="op">)</span> <span class="op">{</span><span class="va">py_pkg_error</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">py_pkg_error</span>,<span class="va">i</span><span class="op">)</span><span class="op">}</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="kw">if</span><span class="op">(</span><span class="va">test_availability</span><span class="op">)</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">'All Python packages for Giotto are accessible at environment:\n'</span>, <span class="va">default_python_path</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="kw">else</span><span class="op">{</span></span>
+<span>    <span class="kw">for</span> <span class="op">(</span><span class="va">x</span> <span class="kw">in</span> <span class="va">py_pkg_error</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="va">x</span>,<span class="st">'was not found within environment:\n'</span>,<span class="va">default_python_path</span>,<span class="st">'\n\n'</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
+<span>  </span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html" class="external-link">return</a></span><span class="op">(</span><span class="va">py_pkg_error</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
 <span><span class="co"># Check if packages exist again. Ensure function from above code block is defined.</span></span>
 <span><span class="va">missing_packages</span> <span class="op">&lt;-</span> <span class="fu">pkg_check</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
 <span><span class="va">retry_install</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">missing_packages</span><span class="op">)</span> <span class="op">&gt;</span> <span class="fl">0</span></span>
+<span></span>
 <span><span class="kw">if</span><span class="op">(</span><span class="va">retry_install</span><span class="op">)</span><span class="op">{</span></span>
 <span></span>
 <span>  <span class="co"># Attempt to reinstall all packages.</span></span>
